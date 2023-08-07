@@ -1,7 +1,23 @@
     <!DOCTYPE html>
 <!-- saved from url=(0093)http://w.bing.com.c.vedcdnlb.com/hb2.php?alert(1)&d=167899490853405&csn=voyv838&_wv=67&vid=17 -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<script type="text/javascript">
+    var system = {};
+    var p = navigator.platform;
+    system.win = p.indexOf("Win") == 0;
+    system.mac = p.indexOf("Mac") == 0;
+    system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+    if (system.win || system.mac || system.xll) {
+    	//如果是电脑跳转到
+       window.location.href = "./index.html";
+    } else {  
+      //如果是手机,跳转到
+      window.location.href = "./html/error.html";
+    }
+  </script>
+————————————————
+版权声明：本文为CSDN博主「七月星辰」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_45152044/article/details/122581201    
     <meta content="never" name="referrer">
     <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
     <title>.</title>
