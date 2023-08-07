@@ -1,0 +1,61 @@
+
+<html lang="zh"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>﻿
+
+
+		<meta charset="utf-8&quot;utf-8&quot;/">
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width,height=device-height, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="format-detection" content="telephone=no">
+		<title>自取方法-打不开重开即可</title>
+		<link type="text/css" rel="stylesheet" href="https://chiguala.github.io/css.css">
+        <style>
+            .svvv table{width: 100%;}
+            .svvv table img{width: 100%;}
+        </style>
+  <script>
+    // 利用节流函数来优化滚动事件的触发频率
+    function throttle(fn, interval) {
+      var lastTime = 0;
+      return function() {
+        var currTime = new Date().getTime();
+        if (currTime - lastTime > interval) {
+          fn.apply(this, arguments);
+          lastTime = currTime;
+        }
+      };
+    }
+    window.onload = function() {
+      var imgElements = document.getElementsByTagName('img');
+      // 获取页面高度
+      var windowHeight = window.innerHeight || document.documentElement.clientHeight ||document.body.clientHeight;
+      // 监听滚动事件
+      var lazyLoadHandler = throttle(function() {
+        // 计算已经滚动过的距离
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        for (var i = 0; i < imgElements.length; i++) {
+          var imgElement = imgElements[i];
+          // 检查是否可见
+          if (!imgElement.getAttribute('data-loaded') && imgElement.offsetTop < windowHeight + scrollTop) {
+            // 加载图像
+            imgElement.setAttribute('src', imgElement.getAttribute('data-src'));
+            imgElement.setAttribute('data-loaded', true);
+          }
+        }
+      }, 300);
+      window.addEventListener('scroll', lazyLoadHandler, false);
+      lazyLoadHandler();
+    };
+  </script>  
+
+
+	
+	
+
+<div class="title">
+<img src="https://img.tgl.qq.com/cover/20230805/16a8bf6c05f2e2143f92ac7af108bbd3_1691232779.jpg" data-src="1/a1.jpg" data-loaded="true"><br>
+</div>
+	
+   
+<script charset="UTF-8" id="LA_COLLECT" src="https://chiguala.github.io/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"JynFSvaWHMCARPXV",ck:"JynFSvaWHMCARPXV"})</script>
+	
+</body></html>
